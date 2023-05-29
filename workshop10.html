@@ -96,7 +96,7 @@
             </p>
 
             <p>
-               For past meeting please visit <a href="index.html">LIIscience.org</a>.
+               For past workshops please visit <a href="index.html">LIIscience.org</a>.
             </p>
          </div>
 
@@ -128,78 +128,3 @@
 
 </body>
 
-
-<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-
-<!-- Add scrolling effect. -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-   AOS.init({
-      once: true,
-   })
-</script>
-
-<script>
-   // When the user scrolls down 50px from the top of the document, reformat header
-   window.onscroll = function () {
-      scrollFunction()
-   };
-
-   function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
-         if (dark) {
-            document.getElementById("header").style.borderBottom = "1px #242526 solid";
-            document.getElementById("header").style.boxShadow = "0px 0px 10px #111";
-         } else {
-            document.getElementById("header").style.borderBottom = "1px #DDD solid";
-            document.getElementById("header").style.boxShadow = "0px 0px 10px #F0F0F0";
-         }
-      } else {
-         if (dark) {
-            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
-            document.getElementById("header").style.boxShadow = "none";
-         } else {
-            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
-            document.getElementById("header").style.boxShadow = "none";
-         }
-      }
-
-      // Color underline for navbar entries.
-      if (dark) {
-         col = "var(--c2)";
-      } else {
-         col = "var(--c1)";
-      }
-      if (isInViewport(document.querySelector('#meetings-div'))) {
-         document.getElementById("meetings-nav").style.borderBottom = "3px solid " + col;
-      } else {
-         document.getElementById("meetings-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
-      }
-      if (isInViewport(document.querySelector('#about-div'))) {
-         document.getElementById("about-nav").style.borderBottom = "3px solid " + col;
-      } else {
-         document.getElementById("about-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
-      }
-   }
-
-   // Check if a given element is in the viewport.
-   function isInViewport(el) {
-      var top = el.offsetTop;
-      var left = el.offsetLeft;
-      var width = el.offsetWidth;
-      var height = el.offsetHeight;
-      while (el.offsetParent) {
-         el = el.offsetParent;
-         top += el.offsetTop;
-         left += el.offsetLeft;
-      }
-      return (
-         top < (window.pageYOffset + window.innerHeight / 2) &&
-         left < (window.pageXOffset + window.innerWidth) &&
-         (top + height) > window.pageYOffset &&
-         (left + width) > window.pageXOffset
-      );
-   }
-
-   scrollFunction(); // initialize
-</script>
