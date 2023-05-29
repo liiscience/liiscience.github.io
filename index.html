@@ -1,0 +1,366 @@
+<html lang="en">
+
+<head>
+
+   <meta charset="utf-8">
+
+   <!-- Load jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <!-- For scrolling effect -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+   <!-- Import font awesome icons -->
+   <script src="https://kit.fontawesome.com/58cf1bb60d.js" crossorigin="anonymous"></script>
+
+   <link href="https://fonts.cdnfonts.com/css/gotham-narrow" rel="stylesheet">
+   <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+   <link href="style.css" rel="stylesheet">
+
+   <meta name="color-scheme" content="light dark" />
+
+   <script>
+      // Initialize light/dark mode.
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      var dark = prefersDarkScheme.matches;
+
+      // Apply appropriate theme.
+      function toggleNight() {
+         dark = !dark;
+
+         // Swap CSS.
+         document.body.classList.toggle("dark-theme");
+
+         // Update background color
+         if (dark) {
+            document.querySelector(':root').style.setProperty('--background-color', '#0D1117');
+         } else {
+            document.querySelector(':root').style.setProperty('--background-color', '#FDFDFD');
+         }
+
+         scrollFunction();
+      };
+   </script>
+</head>
+
+<body onload="if (dark) { dark = !dark; toggleNight(); }" id="body">
+
+   <div id="header">
+      <div id="colorbar"></div>
+      <div class="pre-main">
+         <div class="post-header">
+            <div>
+               <a href="#" style="margin-left:0px;"><img src="imgs/logo_v2_dark.svg" style="width:70px;"></a>
+            </div>
+            <div>
+               <a id="about-nav" href="#about">About</a>
+               <a id="meetings-nav" href="#meetings">Meetings</a>
+            </div>
+            <button onclick="toggleNight()" class="light-dark-toggle" id="light-dark-toggle-bar">
+               <span><i class="fas fa-moon" id="moon"></i></span>
+               <span><i class="fas fa-sun" id="sun"></i></span>
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <div class="pre-main">
+      <div class="main" id="main">
+
+         <div style="margin-bottom:20px;" id="light-dark-toggle-inpage">
+            <button onclick="toggleNight()" class="light-dark-toggle">
+               <span><i class="fas fa-moon" id="moon"></i></span>
+               <span><i class="fas fa-sun" id="sun"></i></span>
+            </button>
+         </div>
+
+         <h1>LIIscience.org</h1>
+
+         <div class="head-div">
+            <h2 id="about" style="padding-top:90px;">About</h2>
+         </div>
+
+         <div id="about-div">
+            <p>
+               "LIIscience.org exists to foster communications about the physics and chemistry of laser-induced
+               incandescence (LII) of nanoparticles. The focus is on aspects of making this powerful diagnostic
+               quantitative. These aspects include modeling of the nanoscale heat and mass transfer processes,
+               experimental design, signal evaluation, and interlaboratory comparisons. Unless otherwise specified, the
+               nanoparticle under investigation with LII is combustion-generated soot. Although applications are
+               referred to occasionally, and may be discussed in the forums, there are many other outlets better suited
+               for communications on the applications of LII."
+            </p>
+
+            <p>
+               <i>Greg Smallwood and Christof Schulz</i>
+            </p>
+         </div>
+
+         <div class="head-div">
+            <h2 id="meetings">Meetings</h2>
+         </div>
+
+         <div id="meetings-div">
+
+            <h3>Upcoming meetings</h3>
+
+            <ul reversed class="list">
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>10th Workshop</b></p>
+                     <p>10th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, applic.ation. 
+                        June 25 – 28, 2024 Muskoka, Canada.</p>
+                     <p><a href="workshop10.html">Workshop website</a></p>
+                  </li>
+               </div>
+            </ul>
+
+
+
+            <h3>Past meetings</h3>
+
+            <ul reversed class="list">
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>9th Workshop</b></p>
+                     <p>9th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        June 12 – 15, 2022. Strathclyde/Glasgow, UK.</p>
+                     <p><a href="https://liiscience.org/meeting/past-meetings/meeting-2022-s0a/">https://liiscience.org/meeting/past-meetings/meeting-2022-s0a</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>8th Workshop</b></p>
+                     <p>8th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                     interpretation, modelling, application. 
+                     June 10 – 13, 2018. Tutzing, Germany.</p>
+                     <p><a href="http://liiscience.org/2018_00/">http://liiscience.org/2018_00</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>7th Workshop</b></p>
+                     <p>7th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        June 19 – 22, 2016. Lake Tahoe, USA.</p>
+                     <p><a href="http://energyworkshops.sandia.gov/earth-climate/laser-induced-incandescence-lii">http://energyworkshops.sandia.gov/earth-climate/laser-induced-incandescence-lii</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>6th Workshop</b></p>
+                     <p>6th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        June 8 – 11, 2014. Backafallsbyn, Lund, Sweden.</p>
+                     <p><a href="www.lii2014.lth.se">www.lii2014.lth.se/</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>5th Workshop</b></p>
+                     <p>5th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        May 9 – 11, 2012. The Channel (La Manche), Le Touquet, France.</p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>4th Workshop</b></p>
+                     <p>4th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        April 18 – 20, 2010. Varenna, Lecco, Italy.</p>
+                     <p><a href="www.area3.mi.cnr.it/liiworkshop">www.area3.mi.cnr.it/liiworkshop</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>3rd Workshop</b></p>
+                     <p>3rd International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        July 31 – August 1, 2008. Ottawa, Canada.</p>
+                     <p><a href="http://liiscience.org/08Workshop_Main/">http://liiscience.org/08Workshop_Main</a></p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>2nd Workshop</b></p>
+                     <p>2nd International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        August 2 – 4, 2006. Bad Herrenalb, Germany.</p>
+                  </li>
+               </div>
+
+               <div data-aos="slide-up" class="aos-init aos-animate">
+                  <li class="list-entry">
+                     <p class="pub-title" style="padding-bottom:0px;"><b>1st Workshop</b></p>
+                     <p>1st International Bunsen Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+                        interpretation, modelling, application. 
+                        September 25 – 28, 2005. Universität Duisburg-Essen, Germany.</p>
+                     <p><a href="http://CEUR-WS.org/Vol-195/">http://CEUR-WS.org/Vol-195</a></p>
+                  </li>
+               </div>
+            </ul>
+
+            <!--
+            The 9th Workshop website was hosted at https://liiscience.org/meeting/past-meetings/meeting-2022-s0a/
+            Downloads:
+            LII_Workshop_2022_Abstract_Book.pdf
+
+            8th Workshop
+
+            8th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            June, 10-13, 2018, Tutzing, Germany
+            The 8th Workshop website was hosted at http://liiscience.org/2018_00/
+            Downloads:
+            Discussion1_key_parameters.pdf
+            Discussion2_supplementary_combined_diags.pdf
+            Discussion3_LII_modelling.pdf
+            Discussion4_non_soot_LII.pdf
+            LII_WS2018_Proceedings.pdf
+
+            7th Workshop
+
+            7th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            June, 19-22, 2016, Lake Tahoe, USA
+            The 7th Workshop website was hosted at
+            http://energyworkshops.sandia.gov/earth-climate/laser-induced-incandescence-lii.
+            6th Workshop
+
+            6th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            June, 8-11, 2014, Backafallsbyn, Lund, Sweden
+            The 6th Workshop website was hosted at www.lii2014.lth.se/.
+            Downloads:
+            01_Discussion_Std_Flames.pdf
+            02_Discussion_Key_Parameters_LII.pdf
+            04_Discussion_Coupling_Techniques.pdf
+            05_Discussion_Non_soot_LII.pdf
+
+            5th Workshop
+
+            5th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            May, 9-11, 2012, The Channel (La Manche), Le Touquet, France
+            4th Workshop
+
+            4th International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            April, 18-20, 2010, Varenna, Lecco, Italy
+            The 4th Workshop website was hosted at www.area3.mi.cnr.it/liiworkshop.
+            3rd Workshop
+
+            3rd International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            July 31 – August 1, 2008, Ottawa, Canada
+            The 3rd Workshop website was hosted on the present website.http://liiscience.org/08Workshop_Main/
+            2nd Workshop
+
+            2nd International Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            August 2-4, 2006, Bad Herrenalb, Germany
+            1st Workshop
+
+            1st International Bunsen Discussion Meeting and Workshop on Laser-induced incandescence: Quantitative
+            interpretation, modelling, application
+            September 25-28, 2005, Universität Duisburg-Essen, Germany
+            The proceedings from the 1st workshop have been published online at http://CEUR-WS.org/Vol-195/. Details on
+            the papers and posters presented can also be found in the Publications directory at
+            http://liiscience.org/node/329.
+            -->
+         </div>
+
+      </div>
+   </div>
+
+   <div class="footer">
+      © liiscience.org 2023
+   </div>
+
+</body>
+
+
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<!-- Add scrolling effect. -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+   AOS.init({
+      once: true,
+   })
+</script>
+
+<script>
+   // When the user scrolls down 50px from the top of the document, reformat header
+   window.onscroll = function () {
+      scrollFunction()
+   };
+
+   function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
+         if (dark) {
+            document.getElementById("header").style.borderBottom = "1px #242526 solid";
+            document.getElementById("header").style.boxShadow = "0px 0px 10px #111";
+         } else {
+            document.getElementById("header").style.borderBottom = "1px #DDD solid";
+            document.getElementById("header").style.boxShadow = "0px 0px 10px #F0F0F0";
+         }
+      } else {
+         if (dark) {
+            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
+            document.getElementById("header").style.boxShadow = "none";
+         } else {
+            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
+            document.getElementById("header").style.boxShadow = "none";
+         }
+      }
+
+      // Color underline for navbar entries.
+      if (dark) {
+         col = "var(--c2)";
+      } else {
+         col = "var(--c1)";
+      }
+      if (isInViewport(document.querySelector('#meetings-div'))) {
+         document.getElementById("meetings-nav").style.borderBottom = "3px solid " + col;
+      } else {
+         document.getElementById("meetings-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
+      }
+      if (isInViewport(document.querySelector('#about-div'))) {
+         document.getElementById("about-nav").style.borderBottom = "3px solid " + col;
+      } else {
+         document.getElementById("about-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
+      }
+   }
+
+   // Check if a given element is in the viewport.
+   function isInViewport(el) {
+      var top = el.offsetTop;
+      var left = el.offsetLeft;
+      var width = el.offsetWidth;
+      var height = el.offsetHeight;
+      while (el.offsetParent) {
+         el = el.offsetParent;
+         top += el.offsetTop;
+         left += el.offsetLeft;
+      }
+      return (
+         top < (window.pageYOffset + window.innerHeight / 2) &&
+         left < (window.pageXOffset + window.innerWidth) &&
+         (top + height) > window.pageYOffset &&
+         (left + width) > window.pageXOffset
+      );
+   }
+
+   scrollFunction(); // initialize
+</script>

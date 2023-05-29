@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&&display=swap');
+
+:root {
+  color-scheme: light dark;
+  /* both supported */
+  --background-color: #FDFDFD;
+  --c1: #FF4552;
+  --c2: #FEDC3D;
+  --c5: #FF4552;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0D1117;
+  }
+}
+
+/*------ Basic formatting ------*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: auto 0px;
+  padding: 0px;
+  font-family: 'Open Sans', 'sans-serif';
+  font-weight: 400;
+  font-size: 11.5pt;
+  transition: 0.3s;
+  color: black;
+  background-color: var(--background-color);
+}
+body.dark-theme {
+  color: #CCC;
+  background-color: var(--background-color);
+}
+
+b {
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
+
+p {
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 0px;
+}
+@media screen and (min-width: 600px) {  /* for narrow displays */
+  p {
+    text-align: justify;
+  }
+}
+
+div.main {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 900px;
+  padding-top: 110px;
+  padding-bottom: 50px;
+}
+div.pre-main {
+  padding-left: 18px;
+  padding-right: 5px;
+}
+
+/* h1 is site specific */
+
+h2 {
+  font-size: 28pt;
+  padding-bottom: 15px;
+  padding-top: 120px;
+  font-family: 'Gotham';
+  font-weight: 600;
+}
+.head-div {  /* if site is printed */
+  page-break-after: avoid;
+}
+
+h3 {
+  margin-top: 35px;
+  font-weight: 300;
+  font-size: 18pt;
+}
+
+a {
+  color: var(--c1);
+  cursor: pointer;
+  transition: all 0.8s ease 0s;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--c5);
+  text-decoration: underline 1px;
+}
+body.dark-theme a {
+  color: var(--c2);
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+ol {
+  list-style: decimal-leading-zero;
+}
+ol li::marker {
+  color: #999;
+  font-weight: 300;
+  font-size: 10pt;
+}
+body.dark-theme ol li::marker {
+  color: white;
+}
+ol li:hover::marker {
+  color: black;
+}
+body.dark-theme ol li:hover::marker {
+  color: white;
+}
+
+#colorbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--c1);
+  height: 5px;
+  z-index: 20;
+}
+body.dark-theme #colorbar {
+  background-color: var(--c2);
+}
+/*-----------------------------*/
+
+
+/*----- Header formatting -----*/
+#header {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  #header {
+    display: inline-block;
+    backdrop-filter: blur(8px);
+    background-color: rgba(253, 253, 253, 0.85);
+    margin: 0px;
+    padding: 0px;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.6s;
+    overflow-y: hidden;
+    box-shadow: 0px 0px 10px #F0F0F0;
+    border-bottom: var(--background-color) 1px solid;
+  }
+  body.dark-theme #header {
+    backdrop-filter: blur(8px);
+    background-color: rgba(13, 17, 23, 0.85);
+    box-shadow: 0px 0px 10px #111;
+    border-bottom: var(--background-color) 1px solid;
+  }
+}
+
+div.post-header {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 900px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+div.post-header a {
+  text-decoration: none;
+  margin-right: 15px;
+  margin-left: 15px;
+  line-height: 34px;
+  color: #222;
+  transition: all 0.3s ease 0s;
+  padding-bottom: 2px;
+}
+
+body.dark-theme div.post-header a {
+  color: #DDD;
+}
+
+div.post-header a:hover {
+  color: var(--c1);
+}
+
+body.dark-theme div.post-header a:hover {
+  color: var(--c2);
+}
+
+div.post-header a.head-first {
+  font-family: 'Gotham';
+  font-weight: 300;
+  font-size: 15pt;
+  margin-left: 0px;
+}
+/*-----------------------------*/
+
+
+/*--- For light/dark toggle ---*/
+button.light-dark-toggle {
+  font-family: inherit;
+  font-size: 16pt;
+  display: inline;
+  background-color: inherit;
+  width: 35px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+body.dark-theme #sun {
+  display: inline-block;
+  color: var(--c2);
+}
+
+#sun {
+  display: none;
+}
+
+body.dark-theme #moon {
+  display: none;
+}
+
+#moon {
+  display: inline-block;
+  color: var(--c1);
+}
+
+@media screen and (min-width: 600px) {
+  #light-dark-toggle-inpage {
+    display: none;
+  }
+}
+/*-----------------------------*/
+
+
+/*----- Site specific -----*/
+h1 {
+  font-size: 45pt;
+  font-weight: 300;
+  font-family: 'Open Sans', 'sans-serif';
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  ol {
+    list-style: none;
+  }
+
+  #light-dark-toggle-bar {
+    display: none;
+  }
+}
+
+.addresses {
+  padding-right: 20px;
+  margin-bottom: 4px;
+  font-size: 11.5pt;
+}
+
+.addresses i {
+  width: 15px;
+  font-size: 10pt;
+}
+
+
+input {
+  width: 75%;
+  margin-top: 20px;
+  margin-right: 3px;
+  padding: 7px;
+  background-color: white;
+  border: 1.5px solid #CCC;
+  border-radius: 6px;
+  font-size: 13.5pt;
+  transition: 0.5s;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  color: black;
+}
+
+input:hover {
+  border: 1.5px solid var(--c1);
+  box-shadow: 0px 0px 4px #AAA;
+}
+
+body.dark-theme input {
+  border: 1.5px solid #666;
+  background-color: black;
+  color: white;
+}
+
+body.dark-theme input:hover {
+  border: 1.5px solid var(--c2);
+  box-shadow: 0px 0px 4px #666;
+}
+
+
+img.profile {
+  margin-right: 20px;
+  margin-top: 50px;
+  height: 140px;
+  border: 1.5px solid black;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+body.dark-theme img.profile {
+  border: 1.5px solid #DDD;
+}
+
+div.div-icon {
+  padding-right: 80px;
+  margin-bottom: 10px;
+}
+
+a.a-icon {
+  margin-right: 20px;
+  text-decoration: none;
+  vertical-align: text-top;
+}
+
+a.a-icon i {
+  display: inline-block;
+  color: black;
+  font-size: 33px;
+  transition: 0.3s;
+  padding-right: 5px;
+}
+
+body.dark-theme a.a-icon i {
+  color: white;
+}
+
+a.a-icon:hover i {
+  color: var(--c1);
+}
+
+body.dark-theme a.a-icon:hover i {
+  color: var(--c2);
+}
+
+.fa-scholar {
+  content: url('img/google-scholar.svg');
+  height: 1em;
+  width: auto;
+}
+
+a.a-icon svg {
+  height: 33px;
+  width: 35px;
+  color: black;
+}
+
+body.dark-theme a.a-icon svg {
+  height: 33px;
+  width: 35px;
+  color: white;
+  fill: white;
+}
+
+a.a-icon:hover svg {
+  fill: var(--c1);
+  color: var(--c1);
+  transition: all 0.3s ease 0s;
+}
+
+body.dark-theme a.a-icon:hover svg {
+  fill: var(--c2);
+  color: var(--c2);
+  transition: all 0.3s ease 0s;
+}
+
+
+/* Format publication and code entries. */
+.expand-list {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-top: black solid 1.5px;
+}
+
+body.dark-theme .expand-list {
+  border-top: white solid 1.5px;
+}
+
+.list {
+  max-height: 1150px;
+  overflow-x: visible;
+  overflow-y: hidden;
+  position: relative;
+}
+
+ol.list {
+  margin-left: -40px;
+}
+
+ol.list h3 {
+  margin-left: 40px;
+}
+
+.list:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0), var(--background-color) 98%);
+  width: 100%;
+  height: 20px;
+}
+
+#list-theses:after {
+  z-index: -1;
+  background-image: var(--background-color);
+}
+
+.list-entry {
+  margin-top: 15px;
+  margin-bottom: 22px;
+  padding-top: 5px;
+  transition: all 0.8s ease 0s;
+  text-align: left;
+  page-break-inside: avoid;
+}
+
+ol .list-entry {
+  margin-left: 40px;
+}
+
+.list-entry p {
+  padding: 0px;
+  text-align: left;
+}
+
+.list-entry:hover p.list-title {
+  transition: all 0.8s ease 0s;
+  color: var(--c1);
+}
+
+body.dark-theme .list-entry:hover p.list-title {
+  color: var(--c2);
+}
+
+.list-entry:hover .pub-author {
+  color: inherit;
+}
+
+.list-entry:hover {
+  color: black;
+}
+
+body.dark-theme .list-entry:hover {
+  color: white;
+}
+
+.list-entry:hover a {
+  color: var(--c5);
+}
+
+.list-entry:hover .little-icon i {
+  color: var(--c5);
+}
+
+body.dark-theme .list-entry:hover a {
+  color: var(--c2);
+}
+
+.list-entry a {
+  text-decoration: none;
+}
+
+.list-entry a:hover {
+  text-decoration: underline;
+}
+
+p.list-title {
+  padding-top: 2px;
+  padding-bottom: 6px;
+  margin: 0px;
+  text-align: left;
+  font-size: 12.5pt;
+  color: #222;
+}
+
+body.dark-theme p.list-title {
+  color: #EEE;
+}
+
+p.list-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-after {
+  font-size: 10pt;
+  margin-right: 15px;
+}
+
+.list-after a:hover {
+  text-decoration: none;
+}
+
+.post-pub {
+  margin-top: 18px;
+  margin-bottom: 35px;
+}
+
+.post-pub a {
+  font-family: 'Gotham';
+  font-weight: 500;
+  padding-left: 0px;
+  padding-top: 5px;
+  color: var(--c1);
+  text-decoration: none;
+  transition: all 0.8s ease 0s;
+}
+
+body.dark-theme .post-pub a {
+  color: var(--c2);
+}
+
+.post-pub a:hover {
+  text-decoration: underline;
+}
+
+body.dark-theme .pub-honour {
+  color: #DDD;
+}
+
+.fa-award {
+  font-size: 10pt;
+  color: var(--c1);
+}
+
+body.dark-theme .fa-award {
+  color: var(--c2);
+}
+
+.horz-list {
+  margin-top: 30px;
+}
+
+.horz-list a {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 8px 0px;
+  font-family: 'Gotham';
+  font-weight: 500;
+  transition: none;
+  color: black;
+}
+
+.horz-list a:hover {
+  color: var(--c1);
+}
+
+body.dark-theme .horz-list a {
+  color: white;
+}
+
+body.dark-theme .horz-list a:hover {
+  color: var(--c2);
+}
+
+.horz-list a:hover {
+  text-decoration: none;
+}
+
+.horz-list .active {
+  border-bottom: solid black 2px;
+}
+
+body.dark-theme .horz-list .active {
+  border-bottom: solid white 2px;
+}
+
+
+/* Code icons */
+
+.little-icon i {
+  color: var(--c1);
+  font-size: 10pt;
+  transition: all 0.8s ease 0s;
+}
+
+body.dark-theme .little-icon i {
+  color: var(--c2);
+}
+
+
+.footer {
+  text-align: center;
+  font-size: 10pt;
+  margin-top: 100px;
+  padding-bottom: 60px;
+}
+
+
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 18px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border: 5px solid var(--background-color);
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+  transition: all 0.8s ease 0s;
+  border: 4px solid var(--background-color);
+}
+
+
+
+.list-entry .aos-init .aos-animate {
+  transition: all 0.8s ease 0s;
+}
+
+.altmetric-embed {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}

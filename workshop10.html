@@ -1,0 +1,204 @@
+
+<html lang="en">
+
+<head>
+
+   <meta charset="utf-8">
+
+   <!-- Load jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <!-- For scrolling effect -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+   <!-- Import font awesome icons -->
+   <script src="https://kit.fontawesome.com/58cf1bb60d.js" crossorigin="anonymous"></script>
+
+   <link href="https://fonts.cdnfonts.com/css/gotham-narrow" rel="stylesheet">
+   <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+   <link href="style.css" rel="stylesheet">
+
+   <meta name="color-scheme" content="light dark" />
+
+   <script>
+      // Initialize light/dark mode.
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      var dark = prefersDarkScheme.matches;
+
+      // Apply appropriate theme.
+      function toggleNight() {
+         dark = !dark;
+
+         // Swap CSS.
+         document.body.classList.toggle("dark-theme");
+
+         // Update background color
+         if (dark) {
+            document.querySelector(':root').style.setProperty('--background-color', '#0D1117');
+         } else {
+            document.querySelector(':root').style.setProperty('--background-color', '#FDFDFD');
+         }
+
+         scrollFunction();
+      };
+   </script>
+</head>
+
+<body onload="if (dark) { dark = !dark; toggleNight(); }" id="body">
+
+   <!--
+   <div id="header">
+      <div id="colorbar"></div>
+      <div class="pre-main">
+         <div class="post-header">
+            <div>
+               <a href="#" style="margin-left:0px;"><i class="fa-solid fa-house"></i></a>
+               <a id="about-nav" href="#intro">Introduction</a>
+               <a id="meetings-nav" href="#information">Information</a>
+            </div>
+            <button onclick="toggleNight()" class="light-dark-toggle" id="light-dark-toggle-bar">
+               <span><i class="fas fa-moon" id="moon"></i></span>
+               <span><i class="fas fa-sun" id="sun"></i></span>
+            </button>
+         </div>
+      </div>
+   </div>
+   -->
+
+   <div class="pre-main" style="background-color:#1C2C60;background:radial-gradient(#1C2C60, #11203F);margin-top:0px;padding-bottom:40px;">
+      <div class="main" id="main">
+
+         <div style="margin:auto 0px;text-align:center;margin-bottom:60px;">
+            <div style="display:inline-block;text-align:left;line-height:0.9;">
+               <span style="color:#FF4552;font-size:18pt;letter-spacing:2pt;font-family:'Segoe UI';line-height:1;">10th International</span><br>
+               <span style="color:white;font-size:28pt;font-family:'Segoe UI Light'">WORKSHOP ON</span><br>
+               <span style="color:white;font-size:28pt;font-family:'Segoe UI'"><b>LASER-INDUCED</b></span><br>
+               <span style="color:white;font-size:28pt;font-family:'Segoe UI'"><b>INCANDESCENCE</b></span>
+            </div>
+         </div>
+
+         <div style="text-align:center">
+            <img src="imgs/schem_light.svg">
+         </div>
+         
+         <div style="text-align:center;font-family:'Segoe UI Light';font-size:16pt;color:white;margin-top:60px;">
+            June 25-28, 2024 | <b>CANADA</b>
+         </div>
+      </div>
+   </div>
+
+   <div class="pre-main">
+      <div class="main">
+
+         <div id="intro-div">
+            <p>
+               This meeting brings together researchers from particle, combustion, and atmospheric 
+               sciences to exchange and discuss recent trends and applications of laser-induced 
+               incandescence for characterizing aerosols – including soot and engineered nanoparticles – 
+               as well as complementary techniques for particle characterization. 
+            </p>
+         </div>
+
+         <div id="information-div">
+            <h3>Location</h3>
+            <p>
+               Muskoka, Ontario, Canada<br>
+               Bayview Wildwood Resort
+            </p>
+
+            <h3>Important Dates</h3>
+            <p>
+               Abstract deadline | <b>May 3, 2024</b> <br>
+               Workshop dates | <b>June 25-28, 2024</b>
+            </p>
+            
+            <h3> </h3>
+            <p>
+               More information to be announced.
+            </p>
+         </div>
+
+      </div>
+   </div>
+
+   <div class="footer">
+      © liiscience.org 2023
+   </div>
+
+</body>
+
+
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<!-- Add scrolling effect. -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+   AOS.init({
+      once: true,
+   })
+</script>
+
+<script>
+   // When the user scrolls down 50px from the top of the document, reformat header
+   window.onscroll = function () {
+      scrollFunction()
+   };
+
+   function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
+         if (dark) {
+            document.getElementById("header").style.borderBottom = "1px #242526 solid";
+            document.getElementById("header").style.boxShadow = "0px 0px 10px #111";
+         } else {
+            document.getElementById("header").style.borderBottom = "1px #DDD solid";
+            document.getElementById("header").style.boxShadow = "0px 0px 10px #F0F0F0";
+         }
+      } else {
+         if (dark) {
+            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
+            document.getElementById("header").style.boxShadow = "none";
+         } else {
+            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
+            document.getElementById("header").style.boxShadow = "none";
+         }
+      }
+
+      // Color underline for navbar entries.
+      if (dark) {
+         col = "var(--c2)";
+      } else {
+         col = "var(--c1)";
+      }
+      if (isInViewport(document.querySelector('#meetings-div'))) {
+         document.getElementById("meetings-nav").style.borderBottom = "3px solid " + col;
+      } else {
+         document.getElementById("meetings-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
+      }
+      if (isInViewport(document.querySelector('#about-div'))) {
+         document.getElementById("about-nav").style.borderBottom = "3px solid " + col;
+      } else {
+         document.getElementById("about-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
+      }
+   }
+
+   // Check if a given element is in the viewport.
+   function isInViewport(el) {
+      var top = el.offsetTop;
+      var left = el.offsetLeft;
+      var width = el.offsetWidth;
+      var height = el.offsetHeight;
+      while (el.offsetParent) {
+         el = el.offsetParent;
+         top += el.offsetTop;
+         left += el.offsetLeft;
+      }
+      return (
+         top < (window.pageYOffset + window.innerHeight / 2) &&
+         left < (window.pageXOffset + window.innerWidth) &&
+         (top + height) > window.pageYOffset &&
+         (left + width) > window.pageXOffset
+      );
+   }
+
+   scrollFunction(); // initialize
+</script>
