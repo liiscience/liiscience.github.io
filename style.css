@@ -6,7 +6,7 @@
   /* both supported */
   --background-color: #FDFDFD;
   --c1: #FF4552;
-  --c2: #FEDC3D;
+  --c2: #FF4552;
   --c5: #FF4552;
 }
 
@@ -256,6 +256,21 @@ h1 {
   font-weight: 300;
   font-family: 'Open Sans', 'sans-serif';
   margin-top: 30px;
+}
+
+#logo-light {
+  display: inline;
+  width:70px;
+}
+#logo-dark {
+  display: none;
+  width:70px;
+}
+body.dark-theme #logo-light {
+  display: none;
+}
+body.dark-theme #logo-dark {
+  display: inline;
 }
 
 @media screen and (max-width: 600px) {
