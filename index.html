@@ -313,74 +313,14 @@
          <!-- Add publications. -->
          <script>
             // Function to read in and add publications.
-            //var populatePubs = function (searchTerm = null) {
-            //   // Add publications.
-            //   var json = $.getJSON(
-            //      "js/pubs.json",
-            //      function (data) {
-            //         di2 = writeArticles(data, true, searchTerm);
-            //         addItems('pubs', di2);
-            //      });
-            //}
+            // Add publications.
+            var json = $.getJSON(
+               "https://raw.githubusercontent.com/tsipkens/lii-science/main/js/pubs.json",
+               function (data) {
+                  di2 = writeArticles(data, false);
+                  addItems('pubs', di2);
+               });
 
-            data = [{
-               "author": "T. A. Sipkens, J. Menser, T. Dreier, C. Schulz, G. J. Smallwood, K. J. Daun",
-               "title": "Laser-induced incandescence for non-soot nanoparticles: recent trends and current challenges",
-               "journal": "Applied Physics B",
-               "volume": 128,
-               "number": 72,
-               "pages": "1-31",
-               "year": 2022,
-               "doi": "https://doi.org/10.1007/s00340-022-07769-z"
-            }, {
-               "author": "H. A. Michelsen, C. Schulz, G. J. Smallwood, S. Will",
-               "title": "Laser-induced incandescence: Particulate diagnostics for combustion, atmospheric, and industrial applications",
-               "journal": "Progress in Energy and Combustion Science",
-               "pages": "2-48",
-               "volume": 51,
-               "number": null,
-               "year": "2015",
-               "doi": "https://doi.org/10.1016/j.pecs.2015.07.001"
-            }, {
-               "author": "H. A. Michelsen, F. Liu, B. F. Kock, H. Bladh, A. Boïarciuc, M. Charwath, T. Dreier, R. Hadef, M. Hofmann, J. Reimann, S. Will",
-               "title": "Modeling laser-induced incandescence of soot: a summary and comparison of LII models",
-               "journal": "Applied Physics B",
-               "pages": "503-521",
-               "volume": 87,
-               "number": null,
-               "year": "2007",
-               "doi": "https://doi.org/10.1007/s00340-007-2619-5"
-            }, {
-               "author": "C. Schulz, B. F. Kock, M. Hofmann, H. Michelsen, S. Will, B. Bougie, R. Suntz, G. Smallwood",
-               "title": "Laser-induced incandescence: recent trends and current questions",
-               "journal": "Applied Physics B",
-               "pages": "333-354",
-               "volume": 83,
-               "number": null,
-               "year": "2006",
-               "doi": "https://doi.org/10.1007/s00340-006-2260-8"
-            }, {
-               "author": "L. A. Melton",
-               "title": "Soot diagnostics based on laser heating",
-               "journal": "Applied Optics",
-               "pages": "2201-2208",
-               "volume": 23,
-               "number": 13,
-               "year": "1984",
-               "doi": "https://doi.org/10.1364/AO.23.002201"
-            }, {
-               "author": "R. W. Weeks, W. W. Duley",
-               "title": "Aerosol‐particle sizes from light emission during excitation by TEA CO2 laser pulses",
-               "journal": "Journal of Applied Physics",
-               "pages": "4661-4662",
-               "volume": 45,
-               "number": 10,
-               "year": "1974",
-               "doi": "https://doi.org/10.1063/1.1663111"
-            }]
-
-            di2 = writeArticles(data, false)
-            addItems('pubs', di2);
          </script>
 
 
