@@ -306,8 +306,6 @@
                   <ol reversed id="pubs" class="list"></ol>
                </div>
             </div>
-            
-            
          </div>
 
          <!-- Add publications. -->
@@ -414,6 +412,11 @@
          document.getElementById("about-nav").style.borderBottom = "3px solid " + col;
       } else {
          document.getElementById("about-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
+      }
+      if (isInViewport(document.querySelector('#papers-div'))) {
+         document.getElementById("papers-nav").style.borderBottom = "3px solid " + col;
+      } else {
+         document.getElementById("papers-nav").style.borderBottom = "3px solid rgba(125, 125, 125, 0)";
       }
       if (isInViewport(document.querySelector('#references-div'))) {
          document.getElementById("references-nav").style.borderBottom = "3px solid " + col;
