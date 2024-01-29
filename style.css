@@ -10,12 +10,6 @@
   --c5: #FF4552;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #0D1117;
-  }
-}
-
 /*------ Basic formatting ------*/
 * {
   padding: 0;
@@ -34,10 +28,6 @@ body {
   font-size: 11.5pt;
   transition: 0.3s;
   color: black;
-  background-color: var(--background-color);
-}
-body.dark-theme {
-  color: #CCC;
   background-color: var(--background-color);
 }
 
@@ -99,10 +89,6 @@ a:hover {
   color: var(--c5);
   text-decoration: underline 1px;
 }
-body.dark-theme a {
-  color: var(--c2);
-  cursor: pointer;
-}
 
 ul {
   list-style: none;
@@ -115,14 +101,8 @@ ol li::marker {
   font-weight: 300;
   font-size: 10pt;
 }
-body.dark-theme ol li::marker {
-  color: white;
-}
 ol li:hover::marker {
   color: black;
-}
-body.dark-theme ol li:hover::marker {
-  color: white;
 }
 
 #colorbar {
@@ -132,9 +112,6 @@ body.dark-theme ol li:hover::marker {
   background-color: var(--c1);
   height: 5px;
   z-index: 20;
-}
-body.dark-theme #colorbar {
-  background-color: var(--c2);
 }
 /*-----------------------------*/
 
@@ -146,8 +123,7 @@ body.dark-theme #colorbar {
 @media screen and (min-width: 600px) {
   #header {
     display: inline-block;
-    backdrop-filter: blur(8px);
-    background-color: rgba(253, 253, 253, 0.85);
+    background-color: rgba(253, 253, 253, 1);
     margin: 0px;
     padding: 0px;
     z-index: 20;
@@ -157,12 +133,6 @@ body.dark-theme #colorbar {
     transition: 0.6s;
     overflow-y: hidden;
     box-shadow: 0px 0px 10px #F0F0F0;
-    border-bottom: var(--background-color) 1px solid;
-  }
-  body.dark-theme #header {
-    backdrop-filter: blur(8px);
-    background-color: rgba(13, 17, 23, 0.85);
-    box-shadow: 0px 0px 10px #111;
     border-bottom: var(--background-color) 1px solid;
   }
 }
@@ -189,16 +159,8 @@ div.post-header a {
   padding-bottom: 2px;
 }
 
-body.dark-theme div.post-header a {
-  color: #DDD;
-}
-
 div.post-header a:hover {
   color: var(--c1);
-}
-
-body.dark-theme div.post-header a:hover {
-  color: var(--c2);
 }
 
 div.post-header a.head-first {
@@ -207,45 +169,17 @@ div.post-header a.head-first {
   font-size: 15pt;
   margin-left: 0px;
 }
-/*-----------------------------*/
 
-
-/*--- For light/dark toggle ---*/
-button.light-dark-toggle {
-  font-family: inherit;
-  font-size: 16pt;
-  display: inline;
-  background-color: inherit;
-  width: 35px;
-  text-align: center;
-  vertical-align: middle;
-  padding: 5px;
-  cursor: pointer;
-  border: none;
+table {
+  border-collapse: collapse;
+	text-align: center;
+	vertical-align: middle;
 }
 
-body.dark-theme #sun {
-  display: inline-block;
-  color: var(--c2);
-}
-
-#sun {
-  display: none;
-}
-
-body.dark-theme #moon {
-  display: none;
-}
-
-#moon {
-  display: inline-block;
-  color: var(--c1);
-}
-
-@media screen and (min-width: 600px) {
-  #light-dark-toggle-inpage {
-    display: none;
-  }
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  background-color: white;
 }
 /*-----------------------------*/
 
@@ -262,24 +196,10 @@ h1 {
   display: inline;
   width:70px;
 }
-#logo-dark {
-  display: none;
-  width:70px;
-}
-body.dark-theme #logo-light {
-  display: none;
-}
-body.dark-theme #logo-dark {
-  display: inline;
-}
 
 @media screen and (max-width: 600px) {
   ol {
     list-style: none;
-  }
-
-  #light-dark-toggle-bar {
-    display: none;
   }
 }
 
@@ -315,17 +235,6 @@ input:hover {
   box-shadow: 0px 0px 4px #AAA;
 }
 
-body.dark-theme input {
-  border: 1.5px solid #666;
-  background-color: black;
-  color: white;
-}
-
-body.dark-theme input:hover {
-  border: 1.5px solid var(--c2);
-  box-shadow: 0px 0px 4px #666;
-}
-
 
 img.profile {
   margin-right: 20px;
@@ -334,10 +243,6 @@ img.profile {
   border: 1.5px solid black;
   border-radius: 50%;
   vertical-align: top;
-}
-
-body.dark-theme img.profile {
-  border: 1.5px solid #DDD;
 }
 
 div.div-icon {
@@ -359,16 +264,8 @@ a.a-icon i {
   padding-right: 5px;
 }
 
-body.dark-theme a.a-icon i {
-  color: white;
-}
-
 a.a-icon:hover i {
   color: var(--c1);
-}
-
-body.dark-theme a.a-icon:hover i {
-  color: var(--c2);
 }
 
 .fa-scholar {
@@ -383,22 +280,9 @@ a.a-icon svg {
   color: black;
 }
 
-body.dark-theme a.a-icon svg {
-  height: 33px;
-  width: 35px;
-  color: white;
-  fill: white;
-}
-
 a.a-icon:hover svg {
   fill: var(--c1);
   color: var(--c1);
-  transition: all 0.3s ease 0s;
-}
-
-body.dark-theme a.a-icon:hover svg {
-  fill: var(--c2);
-  color: var(--c2);
   transition: all 0.3s ease 0s;
 }
 
@@ -410,10 +294,6 @@ body.dark-theme a.a-icon:hover svg {
   padding-bottom: 5px;
   margin-bottom: 15px;
   border-top: black solid 1.5px;
-}
-
-body.dark-theme .expand-list {
-  border-top: white solid 1.5px;
 }
 
 .list {
@@ -454,10 +334,6 @@ ol .list-entry {
   color: var(--c1);
 }
 
-body.dark-theme .list-entry:hover p.list-title {
-  color: var(--c2);
-}
-
 .list-entry:hover .pub-author {
   color: inherit;
 }
@@ -466,20 +342,12 @@ body.dark-theme .list-entry:hover p.list-title {
   color: black;
 }
 
-body.dark-theme .list-entry:hover {
-  color: white;
-}
-
 .list-entry:hover a {
   color: var(--c5);
 }
 
 .list-entry:hover .little-icon i {
   color: var(--c5);
-}
-
-body.dark-theme .list-entry:hover a {
-  color: var(--c2);
 }
 
 .list-entry a {
@@ -497,10 +365,6 @@ p.list-title {
   text-align: left;
   font-size: 12.5pt;
   color: #222;
-}
-
-body.dark-theme p.list-title {
-  color: #EEE;
 }
 
 p.list-title a {
@@ -532,25 +396,8 @@ p.list-title a {
   transition: all 0.8s ease 0s;
 }
 
-body.dark-theme .post-pub a {
-  color: var(--c2);
-}
-
 .post-pub a:hover {
   text-decoration: underline;
-}
-
-body.dark-theme .pub-honour {
-  color: #DDD;
-}
-
-.fa-award {
-  font-size: 10pt;
-  color: var(--c1);
-}
-
-body.dark-theme .fa-award {
-  color: var(--c2);
 }
 
 .horz-list {
@@ -571,24 +418,12 @@ body.dark-theme .fa-award {
   color: var(--c1);
 }
 
-body.dark-theme .horz-list a {
-  color: white;
-}
-
-body.dark-theme .horz-list a:hover {
-  color: var(--c2);
-}
-
 .horz-list a:hover {
   text-decoration: none;
 }
 
 .horz-list .active {
   border-bottom: solid black 2px;
-}
-
-body.dark-theme .horz-list .active {
-  border-bottom: solid white 2px;
 }
 
 
@@ -598,10 +433,6 @@ body.dark-theme .horz-list .active {
   color: var(--c1);
   font-size: 10pt;
   transition: all 0.8s ease 0s;
-}
-
-body.dark-theme .little-icon i {
-  color: var(--c2);
 }
 
 
