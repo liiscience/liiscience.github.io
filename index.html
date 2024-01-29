@@ -21,34 +21,9 @@
    <script type='text/javascript' src="js/pubs.js"></script> <!-- Formatting pubs -->
 
    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   <meta name="color-scheme" content="light dark" />
-
-   <script>
-      // Initialize light/dark mode.
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      var dark = prefersDarkScheme.matches;
-
-      // Apply appropriate theme.
-      function toggleNight() {
-         dark = !dark;
-
-         // Swap CSS.
-         document.body.classList.toggle("dark-theme");
-
-         // Update background color
-         if (dark) {
-            document.querySelector(':root').style.setProperty('--background-color', '#0D1117');
-         } else {
-            document.querySelector(':root').style.setProperty('--background-color', '#FDFDFD');
-         }
-
-         scrollFunction();
-      };
-   </script>
 </head>
 
-<body onload="if (dark) { dark = !dark; toggleNight(); }" id="body">
+<body id="body">
 
    <div id="header">
       <div id="colorbar"></div>
@@ -56,7 +31,6 @@
          <div class="post-header">
             <div>
                <a href="#" style="margin-left:0px;margin-right:0px;"><img id="logo-light" src="imgs/logo_v2_dark.svg"></a>
-               <a href="#" style="margin-left:0px;"><img id="logo-dark" src="imgs/logo_v2_light.svg"></a>
             </div>
             <div>
                <a id="about-nav" href="#about">About</a>
@@ -64,23 +38,12 @@
                <a id="papers-nav" href="#papers">Publications</a>
                <a id="references-nav" href="#references">Reference conditions</a>
             </div>
-            <button onclick="toggleNight()" class="light-dark-toggle" id="light-dark-toggle-bar">
-               <span><i class="fas fa-moon" id="moon"></i></span>
-               <span><i class="fas fa-sun" id="sun"></i></span>
-            </button>
          </div>
       </div>
    </div>
 
    <div class="pre-main">
       <div class="main" id="main">
-
-         <div style="margin-bottom:20px;" id="light-dark-toggle-inpage">
-            <button onclick="toggleNight()" class="light-dark-toggle">
-               <span><i class="fas fa-moon" id="moon"></i></span>
-               <span><i class="fas fa-sun" id="sun"></i></span>
-            </button>
-         </div>
 
          <h1>LIIscience.org</h1>
 
@@ -390,8 +353,8 @@
 
    <div class="footer">
       <span>© liiscience.org 2023</span>
-      <span><a href="">Data</a></span>
-      <span><a href="">Contact</a></span>
+      <!--<span><a href="">Data</a></span>
+      <span><a href="">Contact</a></span>-->
    </div>
 
 </body>
@@ -417,29 +380,15 @@
 
    function scrollFunction() {
       if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 60) {
-         if (dark) {
-            document.getElementById("header").style.borderBottom = "1px #242526 solid";
-            document.getElementById("header").style.boxShadow = "0px 0px 10px #111";
-         } else {
-            document.getElementById("header").style.borderBottom = "1px #DDD solid";
-            document.getElementById("header").style.boxShadow = "0px 0px 10px #F0F0F0";
-         }
+         document.getElementById("header").style.borderBottom = "1px #DDD solid";
+         document.getElementById("header").style.boxShadow = "0px 0px 10px #F0F0F0";
       } else {
-         if (dark) {
-            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
-            document.getElementById("header").style.boxShadow = "none";
-         } else {
-            document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
-            document.getElementById("header").style.boxShadow = "none";
-         }
+         document.getElementById("header").style.borderBottom = "1px var(--background-color) solid";
+         document.getElementById("header").style.boxShadow = "none";
       }
 
       // Color underline for navbar entries.
-      if (dark) {
-         col = "var(--c2)";
-      } else {
-         col = "var(--c1)";
-      }
+      col = "var(--c1)";
       if (isInViewport(document.querySelector('#meetings-div'))) {
          document.getElementById("meetings-nav").style.borderBottom = "3px solid " + col;
       } else {
