@@ -17,34 +17,9 @@
    <link href="https://fonts.cdnfonts.com/css/gotham-narrow" rel="stylesheet">
    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
    <link href="style.css" rel="stylesheet">
-
-   <meta name="color-scheme" content="light dark" />
-
-   <script>
-      // Initialize light/dark mode.
-      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      var dark = prefersDarkScheme.matches;
-
-      // Apply appropriate theme.
-      function toggleNight() {
-         dark = !dark;
-
-         // Swap CSS.
-         document.body.classList.toggle("dark-theme");
-
-         // Update background color
-         if (dark) {
-            document.querySelector(':root').style.setProperty('--background-color', '#0D1117');
-         } else {
-            document.querySelector(':root').style.setProperty('--background-color', '#FDFDFD');
-         }
-
-         scrollFunction();
-      };
-   </script>
 </head>
 
-<body onload="if (dark) { dark = !dark; toggleNight(); }" id="body">
+<body id="body">
 
    <!--
    <div id="header">
@@ -64,11 +39,30 @@
       </div>
    </div>
    -->
+   
 
-   <div class="pre-main" style="background-color:#1C2C60;background:radial-gradient(#1C2C60, #11203F);margin-top:0px;padding-bottom:40px;">
-      <div class="main" id="main" style="padding-top:70px;">
+   <div id="header">
+      <div id="colorbar"></div>
+      <div class="pre-main">
+         <div class="post-header">
+            <div>
+               <a href="#" style="margin-left:0px;margin-right:0px;"><img id="logo-light" src="imgs/logo_v2_dark.svg"></a>
+            </div>
+            <div>
+               <a id="registration-nav" href="#register">Registration</a>
+               <a id="dates-nav" href="#dates">Important Dates</a>
+               <a id="venue-nav" href="#venue">Venue</a>
+               <a id="references-nav" href="#sponsors">Sponsors</a>
+            </div>
+         </div>
+      </div>
+   </div>
 
-         <div style="margin:auto 0px;text-align:center;margin-bottom:60px;">
+
+   <div class="pre-main" style="background-color:#1C2C60;background:radial-gradient(#1C2C60, #11203F);margin-top:0px;padding-bottom:20px;padding-top:80px">
+      <div class="main" id="main" style="padding-top:50px;">
+
+         <div style="margin:auto 0px;text-align:center;margin-bottom:40px;">
             <div style="display:inline-block;text-align:left;line-height:0.9;">
                <span style="color:#FF4552;font-size:18pt;letter-spacing:2pt;font-family:'Segoe UI','Selawik';line-height:1;">10th International</span><br>
                <span style="color:white;font-size:28pt;font-family:'Segoe UI Light','Selawik Light'">WORKSHOP ON</span><br>
@@ -78,10 +72,10 @@
          </div>
 
          <div style="text-align:center">
-            <img style="max-width:300px" src="imgs/schem_light.svg">
+            <img style="max-width:250px" src="imgs/schem_light.svg">
          </div>
          
-         <div style="text-align:center;font-size:16pt;color:white;margin-top:40px;">
+         <div style="text-align:center;font-size:14pt;color:white;margin-top:40px;">
             June 24-27, 2024 | <b>MUSKOKA, CANADA</b>
          </div>
       </div>
@@ -89,6 +83,19 @@
 
    <div class="pre-main">
       <div class="main">
+
+            <div id="logo-header" style="margin-bottom:50px;">
+               Sponsored by:<br>
+               <img src="workshop10/cenide.png" alt="CENIDE" style="max-width:10.5%;padding:1.5%;padding-left:0px;">
+               <img src="workshop10/dmt.svg" alt="DMT" style="max-width:10.5%;padding:1%;">
+               
+               <img src="workshop10/lavision.png" alt="LaVision" style="max-width:10.5%;padding:1.5%;">
+               <img src="workshop10/win.png" alt="WIN" style="max-width:10.5%;padding:1.5%;">
+               <img src="workshop10/artium.png" alt="Artium" style="max-width:10.5%;padding:1.5%;">
+               
+               <img src="workshop10/uw_eng.png" alt="UW, Faculty of Engineering" style="max-width:10.5%;padding:1.5%;">
+               <img src="workshop10/uw_mme.png" alt="UW, MME" style="max-width:10.5%;padding:1.5%;padding-right:0px;">
+            </div>
 
          <div id="intro-div">
             <p>
@@ -99,11 +106,123 @@
             </p>
 
             <p>
+               Throughout the workshop, a single stream of oral presentations on emerging research will be held daily. 
+               Poster sessions will also be held daily. 
+               Additional discussion sessions on a range of topics will provide a summary of progress in the field. 
+            </p>
+
+            <p>
+               This is an in-person only event. 
+            </p>
+
+            <p>
                For past workshops please visit <a href="https://liiscience.org">LIIscience.org</a>.
             </p>
          </div>
 
          <div id="information-div">
+            
+            <h2 id="register">Registration</h2>
+            
+            <p>
+               Participants can register and pay conference fees at the following link: 
+               <br>
+               <a href="https://eventworx.uwaterloo.ca/onlinereg/Register/default.aspx?code=C000938"> 
+                  https://eventworx.uwaterloo.ca/onlinereg/Register/default.aspx?code=C000938
+               </a>.
+            </p>
+
+            <p>
+               Registration includes on-site accommodation, meals, and access to all sessions. 
+               The precise cost depending on the chosen occupancy, with all costs in Canadian Dollars:
+            </p>
+
+            <p>
+               <table>
+                  <tr>
+                     <td>Full registration, single occupancy</td>
+                     <td>$1,800 per person</td>
+                  </tr>
+                  <tr>
+                     <td>Full registration, double occupancy</td>
+                     <td>$1,300 per person</td>
+                  </tr>
+                  <tr>
+                     <td>Student registration, single occupancy</td>
+                     <td>$1,200 per person</td>
+                  </tr>
+                  <tr>
+                     <td>Student registration, double occupancy</td>
+                     <td>$1,000 per person</td>
+                  </tr>
+               </table>
+            </p>
+
+
+            <h2 id="dates">Important dates</h2>
+
+            <h3>Full abstract deadline</h3>
+            <p>
+               May 3, 2024 (more details to follow)
+            </p>
+
+            <h3>Workshop dates</h3>
+            <p>
+               June 24-27, 2024
+            </p>
+            
+            <p>
+               <table style="width:100%;">
+                  <tr>
+                     <th colspan="2">Monday (June 24)</th>
+                  </tr>
+                  <tr>
+                     <td style="width:30%">6 PM</td>
+                     <td>Welcome event</td>
+                  </tr>
+               </table>
+            </p>
+            <p>
+               <table style="width:100%;">
+                  <tr>
+                     <th colspan="2">Thursday (June 27)</th>
+                  </tr>
+                  <tr>
+                     <td style="width:30%">1:30 PM</td>
+                     <td>End of workshop</td>
+                  </tr>
+               </table>
+            </p>
+
+
+            <h2 id="venue">Venue</h2>
+            <p>
+               Muskoka, Canada<br>
+               Bayview Wildwood Resort<br>
+               <a href="https://www.bayviewwildwood.com/">https://www.bayviewwildwood.com/</a><br>
+               1500 Port Stanton Pkwy, Severn Bridge, ON P0E 1N0<br>
+            </p>
+
+            <p>
+               <span style="width:40%;">
+                  <a href="https://www.bayviewwildwood.com/getaways-ontario-resorts-gallery">
+                  <img src="workshop10/muskoka.jpg" style="width:400px"></a>
+               </span>
+               
+               <span style="width:40%;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d145954.0279528564!2d-79.54123029970948!3d44.7788546532846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d2aa3a0f39f30bf%3A0x75e6d17205eb04ef!2sBayview%20Wildwood%20Resort%2C%20Ascend%20Hotel%20Collection!5e0!3m2!1sen!2sca!4v1694787844473!5m2!1sen!2sca" 
+                     width="400" height="267" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </span>
+            </p>
+
+            <p>
+               <b>Travel by car:</b><br>
+               1.5 hours to <a href="https://www.torontopearson.com/en">Toronto Pearson International Airport (YYZ)</a>, with a wide range of international connections<br>
+               2 hours to Toronto<br>
+               2.5 hours to Waterloo<br>
+               3 hours to Niagara Falls<br>
+               5 hours to Ottawa
+            </p>
 
             
             <h2>Organization</h2>
@@ -129,59 +248,27 @@
                   tsipkens (at) nrc-cnrc.gc.ca
                </p>
             </div>
-
-            <h3>Conference Format</h3>
-            <p>
-               A single stream of oral presentations on emerging research will be held daily. 
-               Poster sessions will also be held daily. 
-               Additional discussion sessions on a range of topics will provide a summary of progress in the field. 
-            </p>
-
-            <h2>Dates</h2>
-
-            <h3>Abstract deadline</h3>
-            <p>
-               May 3, 2024
-            </p>
-
-            <h3>Preliminary schedule</h3>
-            <p>
-               June 24-27, 2024 (more detail coming soon)
-            </p>
-
-
-            <h2>Location</h2>
-            <p>
-               Muskoka, Canada<br>
-               Bayview Wildwood Resort<br>
-               <a href="https://www.bayviewwildwood.com/">https://www.bayviewwildwood.com/</a><br>
-            </p>
-
-            <p>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d145954.0279528564!2d-79.54123029970948!3d44.7788546532846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d2aa3a0f39f30bf%3A0x75e6d17205eb04ef!2sBayview%20Wildwood%20Resort%2C%20Ascend%20Hotel%20Collection!5e0!3m2!1sen!2sca!4v1694787844473!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </p>
-
-            <p>
-               <b>Travel by car:</b><br>
-               1.5 hours to <a href="https://www.torontopearson.com/en">Toronto Pearson International Airport (YYZ)</a>, with a wide range of international connections<br>
-               2 hours to Toronto<br>
-               2.5 hours to Waterloo<br>
-               3 hours to Niagara Falls<br>
-               5 hours to Ottawa
-            </p>
             
             
-            <h2>Sponsors</h2>
+            <h2 id="sponsors">Sponsors</h2>
 
             <p>
-               To be announced.
+               <h3 style="color:#555">Platinum</h3>
+               <img src="workshop10/cenide.png" alt="CENIDE" style="height:160px;padding:30px;padding-left:0px;">
+               <img src="workshop10/dmt.svg" alt="DMT" style="height:90px;padding:30px;padding-left:0px;">
+               
+               <h3 style="color:#CCAA00">Gold</h3>
+               <img src="workshop10/lavision.png" alt="LaVision" style="max-height:70px;padding:30px;padding-left:0px;">
+               <img src="workshop10/win.png" alt="WIN" style="max-height:70px;padding:30px;padding-left:0px;">
+               <img src="workshop10/artium.png" alt="Artium" style="max-height:70px;padding:30px;padding-left:0px;">
+
+               <h3 style="color:#886600">Bronze</h3>
+               <img src="workshop10/uw_eng.png" alt="UW, Faculty of Engineering" style="max-height:30px;padding:30px;padding-left:0px;">
+               <img src="workshop10/uw_mme.png" alt="UW, MME" style="max-height:30px;padding:30px;padding-left:0px;">
             </p>
+            
 
 
-            <h2> </h2>
-            <p>
-               More information to be announced.
-            </p>
          </div>
 
       </div>
